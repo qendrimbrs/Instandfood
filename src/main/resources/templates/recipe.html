@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <title>Title</title>
+
+    <style>
+
+        /* Navbar container */
+        .navbar {
+            overflow: hidden;
+            border: 5px solid black;
+            border-radius: 0.3em;
+            background-color: #f1f1f1;
+            font-family: Arial;
+        }
+
+        /* Links inside the navbar */
+        .navbar a {
+            float: left;
+            font-size: 16px;
+            font-weight: bold;
+            color: #227700;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+
+        /* The dropdown container */
+        .dropdown {
+            float: left;
+            overflow: hidden;
+        }
+
+        /* Dropdown button */
+        .dropdown .dropbtn {
+            font-size: 16px;
+            border: none;
+            background-color: #227700;
+            color: white;
+            outline: none;
+            padding: 14px 16px;
+            font-family: inherit; /* Important for vertical align on mobile phones */
+            margin: 0 auto; /* Important for vertical align on mobile phones */
+        }
+
+        /* Add a red background color to navbar links on hover */
+        .navbar a:hover, .dropdown:hover .dropbtn {
+            background-color: #227700;
+            color: white;
+        }
+
+        /* Dropdown content (hidden by default) */
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+            z-index: 1;
+        }
+
+        /* Links inside the dropdown */
+        .dropdown-content a {
+            float: none;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            text-align: left;
+        }
+
+        /* Add a grey background color to dropdown links on hover */
+        .dropdown-content a:hover {
+            background-color: #ddd;
+        }
+
+        /* Show the dropdown menu on hover */
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        header {
+            padding: 5px;
+            text-align: center;
+            font-size: 35px;
+            color: black;
+        }
+
+        body {
+            background: #efefef url("https://geheimtippmuenchen.de/content/uploads/2022/01/geheimtipp-muenchen-top-5-tuerkisch-essen-jpeg-19-von-31.jpg");
+            background-repeat: no-repeat;
+            background-size: cover;
+            height: 100vh;
+        }
+
+        nav {
+
+            float: left;
+            width: 30%;
+            height: 300px;
+            background: #ccc;
+            padding: 20px;
+            font-size: x-large;
+        }
+
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        form {
+            border: 1px solid black;
+            width: 20%;
+            background-color: whitesmoke;
+            margin: 0 auto;
+            padding: 0 1em;
+            border-radius: 0.5em;
+        }
+
+        section:after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+
+        footer {
+            border: 5px solid black;
+            border-radius: 0.3em;
+            background-color: #f1f1f1;
+            padding: 10px;
+            text-align: center;
+            color: #227700;
+            position: absolute;
+            bottom: 0;
+            width: 99%;
+            height: 65px;
+        }
+
+        span {
+            float: right;
+            color: #227700;
+        }
+
+        @media ( max-width: 600px) {
+            nav, article {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<script>
+    function fillAndSubmit() {
+        document.getElementById('pwdField').value = localStorage.getItem('password');
+        document.getElementById('userField').value = localStorage.getItem('username');
+    }
+
+    function fillDelete() {
+        let pwdFields = document.getElementsByClassName('pwdFieldDel');
+        let userFields = document.getElementsByClassName('userFieldDel');
+
+        for (const pass of pwdFields) {
+            pass.value = localStorage.getItem('password');
+        }
+
+        for (const usr of userFields) {
+            usr.value = localStorage.getItem('username');
+        }
+    }
+
+    function fillRating() {
+        let pwdFields = document.getElementsByClassName('pwdFieldRating');
+        let userFields = document.getElementsByClassName('userFieldRating');
+
+        for (const pass of pwdFields) {
+            pass.value = localStorage.getItem('password');
+        }
+
+        for (const usr of userFields) {
+            usr.value = localStorage.getItem('username');
+        }
+    }
+</script>
+
+<div class="navbar">
+    <span>
+        <div class="dropdown">
+        <button class="dropbtn" th:text="${recipe1.get().user.username}">
+            <i class="fa fa-caret-down"></i>
+        </button>
+        <div class="dropdown-content">
+            <a th:href="@{/home}" onclick="localStorage.clear()">Abmelden</a>
+        </div>
+    </div>
+    </span>
+    <a href="#home" th:href="@{/home/{id}(id=${recipe1.get().user.id})}">Home</a>
+    <a th:href="@{/recipes/{id}/ownRecipe(id=${recipe1.get().user.id})}">Rezepte</a>
+    <a th:href="@{/recipes/user/{id}/recipe/create-recipe(id=${recipe1.get().user.id})}">Rezept erstellen</a>
+</div>
+
+<form>
+    <label>
+        <span1>Titel:</span1>
+        <br/><span th:text="${recipe1.get().user.username}"></span><br/></label>
+    <br/>
+    <br/>
+    <label>
+        <span1>Titel:</span1>
+        <br/><span th:text="${recipe1.get().title}"></span><br/></label>
+    <br/>
+    <br/>
+    <label>
+        <span1>Zutaten:</span1>
+        <br/><span th:text="${recipe1.get().ingredient}"></span><br/></label>
+    <br/>
+    <br/>
+    <label>
+        <span1>Zubereitung:</span1>
+        <br/><span th:text="${recipe1.get().preparation}"></span><br/></label>
+    <br/>
+    <br/>
+    <label th:if="${rate != 0}">
+        <span1>Bewertung:</span1>
+        <br/><span th:text="${rate}"></span><br/></label>
+</form>
+
+<div class="container">
+    <form action="#" th:action="@{/recipes/rate/{rId}/1(rId=${recipeId})}" th:object="${LoginDto}" method="POST">
+        <input onclick="fillRating()" type="image" src="/img/sterne.png" alt="1">
+        <input class="userFieldRating" type="hidden" th:field="*{username}"/>
+        <input class="pwdFieldRating" type="hidden" th:field="*{password}"/>
+    </form>
+
+    <form action="#" th:action="@{/recipes/rate/{rId}/2(rId=${recipeId})}" th:object="${LoginDto}" method="POST">
+        <input onclick="fillRating()" type="image" src="/img/sterne.png" alt="2">
+        <input class="userFieldRating" type="hidden" th:field="*{username}"/>
+        <input class="pwdFieldRating" type="hidden" th:field="*{password}"/>
+    </form>
+
+    <form action="#" th:action="@{/recipes/rate/{rId}/3(rId=${recipeId})}" th:object="${LoginDto}" method="POST">
+        <input onclick="fillRating()" type="image" src="/img/sterne.png" alt="3">
+        <input class="userFieldRating" type="hidden" th:field="*{username}"/>
+        <input class="pwdFieldRating" type="hidden" th:field="*{password}"/>
+    </form>
+
+    <form action="#" th:action="@{/recipes/rate/{rId}/4(rId=${recipeId})}" th:object="${LoginDto}" method="POST">
+        <input onclick="fillRating()" type="image" src="/img/sterne.png" alt="4">
+        <input class="userFieldRating" type="hidden" th:field="*{username}"/>
+        <input class="pwdFieldRating" type="hidden" th:field="*{password}"/>
+    </form>
+
+    <form action="#" th:action="@{/recipes/rate/{rId}/5(rId=${recipeId})}" th:object="${LoginDto}" method="POST">
+        <input onclick="fillRating()" type="image" src="/img/sterne.png" alt="5">
+        <input class="userFieldRating" type="hidden" th:field="*{username}"/>
+        <input class="pwdFieldRating" type="hidden" th:field="*{password}"/>
+    </form>
+
+</div>
+
+<form action="#" th:action="@{/recipes/addComment/{rId}(rId=${recipeId})}" th:object="${CommentDto}" method="POST">
+    <input type="text" th:field="*{comment}" required/>
+    <input id="userField" type="hidden" th:field="*{userId}"/>
+    <input id="pwdField" type="hidden" th:field="*{password}"/>
+    <input onclick="fillAndSubmit()" type="submit" value="Submit"/>
+</form>
+
+<div th:each="comment : ${comments}">
+    <form action="#" th:action="@{/comments/delete/{id}(id=${comment.getCommentId()})}" th:object="${LoginDto}"
+          method="POST">
+        <span> <a th:text="${comment.getText()}"></a> </span>
+        <input onclick="fillDelete()" type="image" src="/img/trash.jpg" alt="delete">
+        <label>
+            <span1>User:</span1>
+            <a th:text="${recipe1.get().getUser().username}"></a></label>
+        <input class="userFieldDel" type="hidden" th:field="*{username}"/>
+        <input class="pwdFieldDel" type="hidden" th:field="*{password}"/>
+
+        <a href="#home"
+           th:href="@{/comments/changeForm/{userid}/{commentid} (userid=${comment.getUser().getId()}, commentid=${comment.getCommentId()})}">Bearbeiten</a>
+
+    </form>
+</div>
+
+</body>
+</html>

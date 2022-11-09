@@ -1,0 +1,33 @@
+stages:
+  - build
+  - test
+
+image: maven:latest
+
+variables:
+  MAVEN_CLI_OPTS: "-s .m2/settings.xml --batch-mode"
+  MAVEN_OPTS: "-Dmaven.repo.local=$CI_PROJECT_DIR/.m2/repository"
+
+cache:
+  paths:
+    - .m2/repository/
+    - target/
+
+build:
+  stage: build
+  script:
+    - mvn compile
+
+test:
+  stage: test
+  services:
+    - postgres
+  variables:
+    POSTGRES_HOST_AUTH_METHOD: trust
+    DB_USERNAME: postgres
+    DB_PASSWORD: mysecretpassword
+    #JDBC_CONNECTION_STRING: 'jdbc:postgresql://postgres:5432/database?stringtype=unspecified'
+    #JDBC_CONNECTION_STRING: 'jdbc:postgresql://postgres:5432/dbname'
+  script:
+    - pwd
+    - mvn test

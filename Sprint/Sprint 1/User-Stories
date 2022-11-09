@@ -1,0 +1,257 @@
+User Stories
+
+UserStory 1: Registrieren
+Besucher haben die Möglichkeit sich zu Registrieren und eine eigene E-Mail-Adresse, Username und Passwort Ihrer Wahl zu erstellen.
+Akzeptanzkriterien:
+
+1.	Pflichtfelder dürfen nicht leer sein.
+2.	Passwort, E-Mail, Nutzername muss den Vorgaben entsprechen.
+
+
+UserStory 2: Registrierung bestätigen
+Als Admin der Benutzer Verwaltung möchte ich die Möglichkeit haben, Benutzer, die sich frisch registriert haben, zu bestätigen, damit sie die Seite Benutzen können.
+Akzeptanzkriterien:
+
+1.	Die Bestätigung muss nach spätestens nach 24 Stunden von Administrator erfolgen. 
+2.	Die Daten des Benutzers müssen den Vorgaben entsprechen.
+3.	Der Admin gibt den Benutzer frei, wenn die Daten den Vorgaben entsprechen
+
+
+UserStory 3: Anmelden
+Als registrierter Benutzer, will ich mich mit meinen eigenen Login Daten im Anmeldeforum der Seite anmelden können, um auf die Seite zu gelangen und diese nutzen zu können.
+Akzeptanzkriterien: 
+
+1.	Die Kombination aus dem eigegebenen Passwort und der E-Mail müssen übereinstimmen
+2.	Wenn die Daten Richtig sind, gelangt der registrierte Benutzer auf die Startseite
+
+
+UserStory 4: Benutzerkonto bearbeiten.
+Als Benutzer will ich meine Kontoinformationen jederzeit ändern können,
+damit die Kontoinformationen immer aktuell bleiben können oder um das Konto sicherer zu machen durchs Ändern vom Passwort oder E-Mail.
+Akzeptanzkriterien:
+
+1.	Pflichtfelder dürfen nicht entfernt/leer bleiben.
+2.	Die Daten müssen den Vorgaben entsprechen  
+3.	Der registrierte Benutzer wir nach der Änderung seiner Daten auf das Log-in Seite weitergeleitet, wo er seine Login Daten nochmal eingeben muss
+
+
+UserStory 5: Benutzer sperren
+Ich bin ein Administrator für die Benutzerverwaltung, der die Möglichkeit haben will, Benutzer zu sperren, um Benutzer, welche sich durch unangemessenes Verhalten auffällig machen zu sperren oder um daten von gehackten Benutzern zu sichern
+Akzeptanzkriterien:
+
+1.	Der Admin muss die Sperre bestätigen
+2.	Der gesperrte Nutzer kann sich nicht mehr mit dem gesperrten Account einloggen.
+3.	Der Administrator für die Benutzerverwaltung bleibt nach einer Sperrung auf der Seite für die Benutzerverwaltung
+
+UserStory 6: Benutzer entsperren
+Als Admin möchte ich einen Benutzer entsperren, damit dieser die Anwendung wieder nutzen kann nutzen kann.
+Akzeptanzkriterien:
+
+1.	Admin wählt Benutzer entsperren und bestätigt mit „JA“
+2.	Der entsperrte Nutzer kann sich wieder mit diesem Account einloggen
+3.	Der Administrator für die Benutzerverwaltung bleibt nach der Entsperrung auf der Seite für die Nutzerverwaltung.
+
+
+UserStory 7: Rezept erstellen
+Als registrierter Benutzer möchte ich die Möglichkeit haben Meine eigenen Rezepte für die Seite zu erstellen, um diese mit anderen Nutzern zu teilen. 
+Akzeptanzkriterien:
+
+1.	Rezeptformular muss eindeutig beschrieben werden.
+2.	Nach der Erstellung des Rezeptes, muss das Rezept für andere registrierte Nutzer zugänglich sein
+3.	Der registrierte Nutzer wird nach der Erstellung eines Rezeptes, zu Seite weitergeleitet wo seine eigenen Rezepte aufgelistet sind
+4.	Das Rezept kann einen Titel haben, welcher bereits existiert
+
+
+UserStory 8: Rezept suchen
+Ein registrierter Benutzer möchte nach dem er/sie ein Rezept erstellt hat suchen bzw. anschauen, welche Zutaten das Gericht hat.
+Akzeptanzkriterien:
+
+1.	User muss im Textfeld Suche den Namen des Rezepts richtig eingeben.
+2.	Rezept muss existieren.
+
+
+UserStory 9: Rezept bearbeiten
+Als registrierter Benutzer möchte ich in der Lage sein meine Rezepte zu bearbeiten, um Fehler zu verbessern oder um diese zu aktualisieren.
+Akzeptanzkriterien:
+
+1.	Der registrierte Benutzer kann nur seine eigenen Rezepte bearbeiten 
+2.	Alle Pflichtfelder müssen ausgefüllt sein
+3.	Die Änderungen wurden übernommen
+4.	Er erscheint eine Meldung, welche die Änderung bestätigt
+
+
+UserStory 10: Eigene Rezepte anzeigen
+Als registrierter Benutzer will ich die Möglichkeit haben meine eigenen Rezepte anzusehen und zu bearbeiten, um Rezepte bei Bedarf anzupassen oder diese zu löschen
+wenn diese nicht mehr aktuell sind.
+Akzeptanzkriterien:
+
+1.	Der registrierte Benutzer sollte nur seine eigenen Rezepte sehen können.
+
+
+UserStory 11: Rezept löschen 
+Ich als registrierter Benutzer möchte die Möglichkeit haben, meine eigenen Rezepte zu löschen, damit ich doppelte Rezepte, die ich aus Versehen erstellt habe, entfernen kann. Oder eine Urheberrechtsverletzung umgehen kann.
+Akzeptanzkriterien:
+
+1.	Der Benutzer kann nur eigene Rezepte löschen
+2.	Der Benutzer muss die Löschung bestätigen
+3.	Das Rezept darf nach der Löschung nicht mehr angezeigt werden
+
+
+UserStory 12: Rezept ansehen
+Als Besucher möchte ich ein Rezept ansehen, um die wesentlichen Inhalte des Rezepts und Anleitung zu erhalten.
+Akzeptanzkriterien:
+
+1.	Besucher kann alle relevanten Informationen zum Rezept einsehen
+
+
+UserStory 13: Rezeptsammlung ansehen
+Als registrierter Benutzer möchte ich die Möglichkeit haben, die von mir gespeicherten Rezepte von anderen Nutzern anzusehen, um diese nach kochen zu können
+Akzeptanzkriterien:
+
+1.	User hat eine Rezeptsammlung erstellt.
+2.	Dem Nutzer werden die Rezeptsammlungen angezeigt.
+
+
+UserStory 14: Rezept melden
+Ein registrierter Benutzer kann ein Rezept Melden, wenn er/sie ein Grund hierfür findet, um Die Administratoren der Rezeptverwaltung auf dieses Rezept aufmerksam zu machen.
+Akzeptanzkriterien:
+
+1.	Meldung muss begründet sein.
+2.	Ein Admin für die Rezeptverwaltung erhält eine Benachrichtigung mit dem Gemeldeten Rezept und den Grund für die Meldung 
+
+
+UserStory 15: Ordner für Rezeptsammlung erstellen
+Als registrierter Benutzer will ich für die Rezeptsammlung einen Ordner erstellen, damit ich meine Rezepte sortieren kann und Ordnung drin habe.
+Akzeptanzkriterien: 
+
+1.	Der registrierte Benutzer kann die Sammlung benennen.
+2.	Man kann Rezepte in der Sammlung speichern
+3.	Nach der Erstellung der Sammlung, wird der registrierte Benutzer zur Seite mit seinen Rezeptsammlungen weitergeleitet
+
+
+UserStory 16: Rezept in einer Sammlung speichern
+Als registrierter Benutzer will ich Rezepte von anderen Benutzern in einer Sammlung speichern können, um sie jeder Zeit wieder abrufen zu können, ohne danach lange suchen zu müssen.
+Akzeptanzkriterien:
+
+1.	Die Rezepte sind nach Datum, in dem diese gespeichert wurden, sortiert.
+2.	Das Rezept ist nun in einer Sammlung aufrufbar 
+
+
+UserStory 17: Rezept aus einer Sammlung entfernen LF:160
+Ich als registrierter Benutzer möchte die Möglichkeit haben, Rezepte aus meiner Sammlung zu entfernen, da ich gerne meine Sammlung aufräumen will oder Rezepte nicht mehr in meiner Sammlung passen.
+Akzeptanzkriterien:	
+
+1.	Der registrierte Benutzer kann lediglich Rezepte aus seiner eigenen Sammlung löschen
+2.	Das Rezept befindet sich nicht mehr in der Sammlung
+3.	Nach der Löschung des Rezeptes, befindet sich der registrierte Benutzer weiterhin in seiner Sammlung.
+
+
+UserStory 18: Rezeptsammlung löschen 
+Als registrierter Benutzer möchte ich eine Sammlung mit Rezepten löschen, da ich diese Sammlung/Rezepte nicht mehr benötige
+Akzeptanzkriterien:
+
+1.	Rezeptsammlung ist nicht mehr vorhanden
+2.	Der registrierte Benutzer wird zu seiner Rezeptsammlung weitergeleitet
+3.	Die gespeicherten Rezepte sind auch nicht mehr über die Sammlung abrufbar 
+
+
+UserStory 19: Kommentar melden
+Als registrierter Benutzer will ich in der Lage sein, unangemessene Kommentare zu melden, damit diese von Administratoren der Kommentarverwaltung, diesen Kommentar löschen können. 
+Akzeptanzkriterien:
+
+1.	Die Meldung muss begründet sein.
+2.	Der Admin der Kommentarverwaltung erhält eine Nachricht mit dem gemeldeten Kommentar und der Begründung
+
+
+UserStory 20: Rezept kommentieren
+Ein registrierter Benutzer kann ein Rezept kommentieren, um z.b Feedback zu geben.
+Akzeptanzkriterien:
+
+1.	Das Kommentarfeld darf nicht leer sein
+2.	Der Kommentar darf nur max. 1000 Zeichen beinhalten
+3.	Wenn der auf Kommentieren gedrückt wurde, bekommt man die meldung das der Kommentar abgeschickt wurde (sofern das Kommentarfeld nicht leer war)
+
+
+UserStory 21: Kommentareinsicht anzeigen
+Sowohl als registrierte Benutzer als auch als Besucher, möchte ich von einem ausgewählten Rezept die Kommentare von anderen Benutzern dazu angucken, um zu gucken, ob es ein Gutes oder Schlechtes Rezept ist.
+Akzeptanzkriterien:
+
+1.	Sowohl Benutzer als auch Besucher sollen sich die Kommentare der Rezepte angucken können.
+2.	Die Kommentare sind absteigend nach Erstelldatum sortiert
+3.	Kommentare, die von einem selbst geschrieben wurden werden markiert.
+
+
+UserStory 22: Rezept bewerten
+Als registrierter Benutzer will ich die Möglichkeit haben Rezepte auf einer Skala von 1 bis 5 zu bewerten, um mein Feedback da zu lassen. 
+Akzeptanzkriterien:
+
+1.	Man kann nicht mehr als 5 und nicht weniger als 1 Stern pro Rezept verteilen
+2.	Man gibt seine Bewertung ab, indem man auf „Bewertung abgeben“ drückt
+
+UserStory 23: Kommentar löschen
+Ich als registrierter Benutzer will die Möglichkeit haben meine eigenen Kommentare zu löschen, um die Kommentare, die ich nicht mehr befürworte zu löschen. Als Admin möchte ich in der Lage sein alle Kommentare zu löschen, um unangemessene Kommentare für immer zu entfernen.
+Akzeptanzkriterien:
+
+1.	Der Benutzer kann nur seine eigenen Kommentare löschen
+2.	Nur der Admin kann alle Kommentare löschen.
+3.	Der Benutzer kehrt zur Kommentaransicht zurück, nachdem er einen Kommentar gelöscht hat.
+
+
+UserStory 24: Kommentare bearbeiten
+Als registrierter Benutzer möchte ich einen von mir erstellten Kommentar bearbeiten, damit dieser aktualisiert wird.
+Akzeptanzkriterien:
+
+1.	Benutzer sind nur in der Lage, ihre eigenen Kommentare zu bearbeiten
+2.	Damit der Kommentar aktualisiert wird, muss der Benutzer auf das Haken-Symbol klicken
+3.	Benutzer hat den Inhalt des Kommentares geändert
+
+
+UserStory 25: Abmelden
+Als registrierter Benutzer möchte ich mich von der Seite mit meinem angemeldeten Account abmelden, damit andere Personen, die dasselbe Gerät benutzen keinen Zugriff auf meinen Account haben
+Akzeptanzkriterien:
+
+1.	Registrierter Benutzer muss angemeldet sein
+2.	Registrierter Benutzer muss bestätigen, dass er sich abmelden will
+3.	Benutzer wurde abgemeldet 
+
+
+UserStory 26: Konto löschen
+Ich als registrierter Benutzer möchte mein Konto löschen und somit auch alle meine Rezepte und Kommentare, falls ich die Seite nicht mehr nutzen will
+Akzeptanzkriterien:
+
+1.	Der Benutzer muss die Löschung seines Kontos bestätigen
+2.	Der Benutzer wird nach der Löschung seines Kontos zum login Screen weitergeleitet.
+
+
+
+UserStory 27: Startseite anzeigen
+Als Besucher will ich beim Starten der App auf die Startseite gelangen, um mich von dort über die Seite zu Navigieren.
+Akzeptanzkriterien:
+
+1.	Der Besucher soll sich beim Starten der App auf der Startseite befinden.
+
+
+UserStory 28: Kontextmenü anzeigen.
+Als registrierter Benutzer will ich die Möglichkeit haben ein Kontextmenü zu öffnen, um schnell über die Seite zu navigieren.
+Akzeptanzkriterien:
+
+1.	man muss die Möglichkeit haben sich an oder abzumelden
+2.	man muss auf die Startseite gelangen können
+
+
+UserStory 29: Nutzerverwaltung öffnen
+Ich als Admin möchte die Nutzerverwaltung öffnen, damit ich einen Benutzer suchen kann, um Informationen herauszufinden. Aber auch die Möglichkeit den Benutzer zu sperren oder entsperren
+Akzeptanzkriterien:
+
+1.	Um ein Benutzer zu entsperren, muss er gesperrt sein
+2.	Kontodaten der Benutzer werden angezeigt
+3.	Der Admin kann Benutzer suchen
+
+
+UserStory 30: Suche Filtern
+Als Besucher will ich die Ergebnisse meiner Suche filtern können, damit dieses meinen Wünschen entsprechen.
+Akzeptanzkriterien:
+
+1.	Besucher wird zu Rezept suchen weitergeleitet
+2.	Besucher klickt auf Filter Button und es erscheint ein Pop-up
+3.	Besucher gibt seine Such Kriterien ein

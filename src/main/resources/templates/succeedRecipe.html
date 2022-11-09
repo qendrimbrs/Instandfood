@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Erstellte Rezepte</title>
+    <style type="text/css">
+        span {
+            display: inline-block;
+            width: 200px;
+            text-align: left;
+        }
+        .success-msg {
+            color: #270;
+            background-color: #DFF2BF;
+        }
+
+        input[type=submit] {
+            background-color: limegreen;
+            cursor: pointer;
+            width: 14em;
+            padding: .3em 0;
+            border-radius: 0.7em;
+        }
+
+        /* Gives visual feedback so you know you're pointing at the button */
+        input[type=submit]:hover {
+            background-color: yellow;
+            box-shadow: 2px 2px 2px grey;
+        }
+
+    </style>
+</head>
+<body>
+
+<div class="success-msg">
+    <i class="fa fa-check"></i>
+    Das Rezept wurde erfolgreich hinzugefuegt
+</div>
+
+<div align="center">
+    <form  action = "test"  th:action="@{/recipes/user/{userid}/recipe/{id}(id=${recipe.recipeid}, userid=${user.getId()})}" th:object="${recipe}" method="get">
+    <h2>Rezept wurde erstellt</h2>
+        <span>Erstellt von:</span><span th:text="${user.getUsername()}"></span><br/>
+    <span>Titel:</span><span th:text="${recipe.title}"></span><br/>
+    <span>Zutaten:</span><span th:text="${recipe.ingredient}"></span><br/>
+    <span>Zubereitung:</span><span th:text="${recipe.preparation}"></span><br/>
+    <input type="submit" value="Weiter">
+
+    </form>
+</div>
+</body>
+</html>

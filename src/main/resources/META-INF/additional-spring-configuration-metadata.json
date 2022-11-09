@@ -1,0 +1,8 @@
+{
+  "properties": [
+    {
+      "name": "pring.datasource.username",
+      "type": "java.lang.String",
+      "description": "Description for pring.datasource.username."
+  }
+] }

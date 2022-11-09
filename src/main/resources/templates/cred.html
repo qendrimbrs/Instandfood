@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <script>
+        function fillCreds() {
+            document.getElementById('lbl_user').innerHTML = localStorage.getItem('username');
+            document.getElementById('lbl_pwd').innerHTML = localStorage.getItem('password')
+        }
+    </script>
+    <label id="lbl_user">User</label>
+    <label id="lbl_pwd">Pass</label>
+    <button onclick="fillCreds()">Test</button>
+</body>
+</html>

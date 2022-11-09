@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form action="#" th:action="@{/home/{userid}(userid=${user1.getId()})}" method="post">
+<span>Titel:</span><span th:text="${collection.getCollectionName()}"></span><br/>
+    <p> <input type="submit" value="Weiter"> </p>
+</form>
+</body>
+</html>

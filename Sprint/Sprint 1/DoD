@@ -1,0 +1,21 @@
+Definition of Done
+
+-	Die Akzeptanzkriterien wurden eingehalten
+-	Das Projekt wurde auf Gitlab gepusht 
+-	Die gesamten Unit Tests laufen erfolgreich durch
+-	Coding Guidelines wurden eingehalten
+-	Der Gesamte Code wurde gereviewt (Abgenommen durch Product-Owner)
+-	Die Benutzerdokumentation wurde erstellt und ist verfügbar
+
+
+
+
+Coding Guidelines
+
+-	Code auf englisch
+-	Sinnvolle Kommentare
+-	Sinnvolle und kompakte Variablennamen 
+-	Sinnvolles Design-Pattern
+-	Sinnvolle Formatierung
+-	Kein Redundanter Code 
+

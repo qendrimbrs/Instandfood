@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <style>
+
+        /* Navbar container */
+        .navbar {
+            overflow: hidden;
+            border: 5px solid black;
+            border-radius: 0.3em;
+            background-color: #f1f1f1;
+            font-family: Arial;
+        }
+
+        /* Links inside the navbar */
+        .navbar a {
+            float: left;
+            font-size: 16px;
+            font-weight: bold;
+            color: #227700;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+
+        /* The dropdown container */
+        .dropdown {
+            float: left;
+            overflow: hidden;
+        }
+
+        /* Dropdown button */
+        .dropdown .dropbtn {
+            font-size: 16px;
+            border: none;
+            background-color: #227700;
+            color: white;
+            outline: none;
+            padding: 14px 16px;
+            font-family: inherit; /* Important for vertical align on mobile phones */
+            margin: 0 auto; /* Important for vertical align on mobile phones */
+        }
+
+        /* Add a red background color to navbar links on hover */
+        .navbar a:hover, .dropdown:hover .dropbtn {
+            background-color: #227700;
+            color: white;
+        }
+
+        /* Dropdown content (hidden by default) */
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+        }
+
+        /* Links inside the dropdown */
+        .dropdown-content a {
+            float: none;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            text-align: left;
+        }
+
+        /* Add a grey background color to dropdown links on hover */
+        .dropdown-content a:hover {
+            background-color: #ddd;
+        }
+
+        /* Show the dropdown menu on hover */
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+        header {
+            padding: 5px;
+            text-align: center;
+            font-size: 35px;
+            color: black;
+        }
+        body{
+            background: #efefef url("https://geheimtippmuenchen.de/content/uploads/2022/01/geheimtipp-muenchen-top-5-tuerkisch-essen-jpeg-19-von-31.jpg");
+            background-repeat: no-repeat;
+            background-size: cover;
+            height: 100vh;
+        }
+        nav {
+
+            float: left;
+            width: 30%;
+            height: 300px;
+            background: #ccc;
+            padding: 20px;
+            font-size: x-large;
+        }
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        form {
+            border: 1px solid black;
+            width: 20%;
+            background-color: whitesmoke;
+            margin: 0 auto;
+            padding: 0 1em;
+            border-radius: 0.5em;
+        }
+        section:after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+        footer {
+            border: 5px solid black;
+            border-radius: 0.3em;
+            background-color: #f1f1f1;
+            padding: 10px;
+            text-align: center;
+            color: #227700;
+            position: absolute;
+            bottom: 0;
+            width: 99%;
+            height: 65px;
+        }
+
+        span {
+            float: right;
+            color: #227700;
+        }
+
+        @media ( max-width : 600px) {
+            nav, article {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="navbar">
+    <span>
+        <div class="dropdown">
+        <button class="dropbtn" th:text="${user.username}">
+            <i class="fa fa-caret-down"></i>
+        </button>
+        <div class="dropdown-content">
+            <a th:href="@{/home}">Abmelden</a>
+        </div>
+    </div>
+    </span>
+    <a href="#home" th:href="@{/home/{id}(id=${user.getId()})}">Home</a>
+    <a th:href="@{/recipes/{id}/ownRecipe(id=${user.getId()})}">Rezepte</a>
+    <a th:href="@{/recipes/user/{id}/recipe/create-recipe(id=${user.getId()})}">Rezept erstellen</a>
+</div>
+
+<section>
+    <form th:if="${recipe.getUser().id} == ${user.getId()}" th:each="recipe : ${recipel}">
+        <label><span1>Erstellt von:</span1><br/><span th:text="${recipe.getUser().username}"></span><br/></label>
+        <br />
+        <br />
+        <label><span1>Titel:</span1><br/><span th:text="${recipe.getTitle()}"></span><br/></label>
+        <br />
+        <br />
+        <label><span1>Zutaten:</span1><br/><span th:text="${recipe.getIngredient()}"></span><br/></label>
+        <br />
+        <br />
+        <label><span1>Zubereitung:</span1><br/><span th:text="${recipe.getPreparation()}"></span><br/></label>
+        <br />
+        <br />
+        <a href="#home" th:href="@{/recipes/readRecipe/{id}(id=${recipe.getRecipeid()})}">Kommentieren</a>
+        <br />
+        <br />
+        <a href="#home" th:href="@{/recipes/user/{userid}/change-recipe/{recipeId}/sec (userid=${recipe.getUser().getId()}, recipeId=${recipe.getRecipeid()})}">Bearbeiten</a>
+    </form>
+</section>
+</body>
+
+</html>
